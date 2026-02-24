@@ -10,7 +10,7 @@ class AppButton extends StatelessWidget {
   final Color shadowColor;
   final double height;
   final double fontSize;
-  final double width;
+  final double? width;
 
   const AppButton({
     super.key,
@@ -22,7 +22,7 @@ class AppButton extends StatelessWidget {
     this.fontWeight,
     required this.height,
     required this.fontSize,
-    required this.width,
+     this.width,
      required this.shadowColor
   });
 
@@ -51,9 +51,7 @@ class AppButton extends StatelessWidget {
           GestureDetector(
             onTap: onPressed,
             child: Container(
-              width: width == double.infinity
-                  ? MediaQuery.of(context).size.width - 48
-                  : width,
+              width: width ?? double.infinity,
               height: height,
               alignment: Alignment.center,
               decoration: BoxDecoration(

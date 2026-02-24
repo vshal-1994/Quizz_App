@@ -17,4 +17,9 @@ class AppStrings {
   static const String invitefriendstoplaytogether="Invite friends to play together";
   static const String peopleyoumayknow="People you may know";
   static const String backtoschoolquixgame="Back To School Quiz Game";
+  static const String description="Description";
+  static const String question10="Questions (10)";
+  static const String playsolo="Play Solo";
+  static const String playwithfriends="Play with Friends";
+  static const String longtext="This is back to school quizzo.Let's make this game in your class to revive the classroom atmosphere after the holidays.Let's have fun at school";
 }
