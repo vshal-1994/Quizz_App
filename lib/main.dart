@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app/screens/create_account_2.dart';
+import 'package:quiz_app/screens/find_friends.dart';
+import 'package:quiz_app/screens/quiz_details_fit_page.dart';
 import 'package:quiz_app/screens/walk_through.dart';
 
 void main() {
@@ -15,6 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        useMaterial3: true,
+
+        textTheme: GoogleFonts.nunitoTextTheme(),
 
         // This is the theme of your application.
         //
@@ -33,7 +40,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: WalkThrough3(),
+      home: const  QuizDetailsFitPage(),
     );
   }
 }
