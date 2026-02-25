@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/app_strings.dart';
 
+import '../custom_widgets/custom_searchbar.dart';
 import '../custom_widgets/find_friends_container.dart';
 import '../custom_widgets/people_youknow_tile.dart';
+import '../data/dummy_data.dart';
+import 'quiz_details_full.dart';
+
+void navigateToQuizDetailPage(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const QuizDetailsSection()),
+  );
+}
 
 class FindFriendsScreen extends StatelessWidget {
   const FindFriendsScreen({super.key});
@@ -11,44 +21,47 @@ class FindFriendsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: 80,
-              left: 24.0,
-              right: 24.0,
-              bottom: 48.0,
-            ),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Sticky header (app bar)
+            Padding(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).padding.top + 32,
+                left: 24.0,
+                right: 24.0,
+                bottom: 16,
+              ),
+              child: Row(
                 children: [
-                  Row(
-            children: [
-            Icon(Icons.arrow_back, size: 28),
-            SizedBox(width: 20),
-            Text(
-              AppStrings.findfriends,
-              style: TextStyle(fontSize: 24,fontFamily: 'Nunito', fontWeight:FontWeight.bold),
+                  Icon(Icons.arrow_back, size: 28),
+                  SizedBox(width: 20),
+                  Text(
+                    AppStrings.findfriends,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontFamily: 'Nunito',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ],
-          ),
-                SizedBox(height:24),
-            Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFF5F5F5),
-                  borderRadius: BorderRadius.circular(16),
+            // Scrollable content below header
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  left: 24.0,
+                  right: 24.0,
+                  bottom: 48.0,
                 ),
-                child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, color: Colors.grey),
-                      hintText:AppStrings.searchbar,
-                      hintStyle: TextStyle(color:Color(0xFFBDBDBD), fontSize: 16,height:1.4),
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(vertical: 15),
-                    ),)
-            ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+            CustomSearchBar(),
                   SizedBox(height:24),
+
+                  
                   Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -94,32 +107,27 @@ class FindFriendsScreen extends StatelessWidget {
                     Icon(Icons.arrow_forward,size:18,color:Color(0xFF6949FF))
                   ]
                   ),
-                  SizedBox(height:24),
-                  Column(children: [
-                    PeopleMayKnowTile(name: AppStrings.dorrankulikowski,
-                      imagePath: "assets/images/darron.png",
-                      onPressed: () {},),
-
-                    PeopleMayKnowTile(name: AppStrings.marryland,
-                      imagePath: "assets/images/marryland.png",
-                      onPressed: () {},),
-                    PeopleMayKnowTile(name: AppStrings.laurale,
-                      imagePath: "assets/images/lauralee.png",
-                      onPressed: () {},),
-
-                    PeopleMayKnowTile(name: AppStrings.alfanzo,
-                      imagePath: "assets/images/darron.png",
-                      onPressed: () {},),
-                    PeopleMayKnowTile(name: "Alfanzo Schuessler",
-                      imagePath: "assets/images/darron.png",
-                      onPressed: () {},),
-
-                  ],
-
+              
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: peopleYouMayKnowList.length,
+                    itemBuilder: (context, index) {
+                      final person = peopleYouMayKnowList[index];
+                      return PeopleMayKnowTile(
+                        name: person['name']!,
+                        imagePath: person['imagePath']!,
+                        onPressed: () => navigateToQuizDetailPage(context),
+                      );
+                    },
                   )
 
-
-
-                ])
-    )));
-  }}
+                ],
+                ),
+              ),
+            ),
+          ],
+        ),
+    );
+  }
+}

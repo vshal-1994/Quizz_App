@@ -3,12 +3,12 @@ import 'package:quiz_app/constants/app_colors.dart';
 import 'package:quiz_app/constants/app_strings.dart';
 
 import '../buttons/button_primary_rounded.dart';
-import '../custom_widgets/list_itemmap.dart';
+import '../custom_widgets/questions_item.dart';
 import '../custom_widgets/profile_section.dart';
 import '../custom_widgets/stats_container.dart';
 
-class QuizDetailsFitPage extends StatelessWidget {
-  const QuizDetailsFitPage({super.key});
+class QuizDetailsSection extends StatelessWidget {
+  const QuizDetailsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

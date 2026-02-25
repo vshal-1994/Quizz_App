@@ -20,20 +20,34 @@ class QuizCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: const Color(0xFFEAEAEA)),
       ),
-      child: Row(
-        children: [
-
-          ClipRRect(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(16),
-              bottomLeft: Radius.circular(16),
-            ),
-            child: Image.asset(
-              image,
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
               width: 120,
-              height: 90,
-              fit: BoxFit.cover,
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  bottomLeft: Radius.circular(16),
+                ),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return Image.asset(
+                      image,
+                      width: constraints.maxWidth,
+                      height: constraints.maxHeight,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.center,
+                      errorBuilder: (_, __, ___) => Container(
+                        color: Colors.grey.shade200,
+                        child: const Icon(Icons.image_not_supported, size: 40),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
-          ),
 
           const SizedBox(width: 12),
 
@@ -64,6 +78,7 @@ class QuizCard extends StatelessWidget {
             ),
           ),
         ],
+      ),
       ),
     );
   }
