@@ -4,7 +4,8 @@ import 'package:quiz_app/constants/app_strings.dart';
 import '../buttons/button_primary_rounded.dart';
 import '../constants/app_colors.dart';
 import '../custom_widgets/indicator_func.dart';
-import '../data.dart';
+import '../data/boarding_data.dart';
+import 'create_account_2.dart';
 class WalkThrough3 extends StatefulWidget {
   const WalkThrough3({super.key});
 
@@ -32,11 +33,12 @@ class _WalkThrough3State extends State<WalkThrough3> {
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(height:50),
+                      SizedBox(height:80),
                       Expanded(
                         child: PageView.builder(
                           controller: _pageController,
                           itemCount: walkthroughPages.length,
+
                           onPageChanged: (index) {
                             setState(() => _currentPage = index);
                           },
@@ -70,7 +72,7 @@ class _WalkThrough3State extends State<WalkThrough3> {
                         ),
                       ),
 
-                      SizedBox(height:30),
+                      SizedBox(height:10),
                       DotsIndicator(selectedIndex: _currentPage),
                       SizedBox(height:40),
                       AppButton(height:58,
@@ -80,9 +82,14 @@ class _WalkThrough3State extends State<WalkThrough3> {
                         backgroundColor:AppColors.primary,
                         fontSize: 16,
                         fontWeight:FontWeight.bold,
-                        onPressed: (){},
-                        elevation: 8,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const CreateAccountTwo()),
+                          );
+                        },
                         textColor:AppColors.white,
+                        shadowColor: AppColors.primary,
 
                       ),
                       SizedBox(height: 16),
@@ -94,7 +101,7 @@ class _WalkThrough3State extends State<WalkThrough3> {
                     fontSize: 16,
                     fontWeight:FontWeight.bold,
                     onPressed: (){},
-                    elevation: 4,
+                    shadowColor: AppColors.primaryLight,
                     textColor:AppColors.darkText),
                       SizedBox(height: 32)
 

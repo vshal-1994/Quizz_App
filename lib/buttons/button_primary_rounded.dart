@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppButton extends StatelessWidget {
   final String text;
@@ -8,10 +7,10 @@ class AppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final double borderRadius;
   final FontWeight? fontWeight;
+  final Color shadowColor;
   final double height;
   final double fontSize;
-  final double? elevation;
-  final double  width;
+  final double? width;
 
   const AppButton({
     super.key,
@@ -23,28 +22,53 @@ class AppButton extends StatelessWidget {
     this.fontWeight,
     required this.height,
     required this.fontSize,
-    this.elevation,
-    required this.width,
-
+     this.width,
+     required this.shadowColor
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
-      height:height,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
-          elevation: elevation??0,
-            shadowColor: backgroundColor.withValues(alpha: 0.6)
-        ),
-        onPressed: onPressed,
-        child: Text(
-          text,
-          style:GoogleFonts.nunito(color: textColor, fontWeight: fontWeight, fontSize:fontSize),
-        ),
+      width: width,
+      height: height + 6,
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+
+          Positioned(
+            top: 6,
+            child: Container(
+              width: width == double.infinity
+                  ? MediaQuery.of(context).size.width - 48
+                  : width,
+              height: height,
+              decoration: BoxDecoration(
+                color: shadowColor,
+                borderRadius: BorderRadius.circular(borderRadius),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: onPressed,
+            child: Container(
+              width: width ?? double.infinity,
+              height: height,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: backgroundColor,
+                borderRadius: BorderRadius.circular(borderRadius),
+              ),
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: textColor,
+                  fontWeight: fontWeight,
+                  fontSize: fontSize,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
