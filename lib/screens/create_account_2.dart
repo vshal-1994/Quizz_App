@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../buttons/button_primary_rounded.dart';
+import '../constants/app_colors.dart';
 import '../custom_widgets/create_account_container.dart';
 import 'find_friends.dart';
 
@@ -71,25 +72,25 @@ class CreateAccountTwo extends StatelessWidget {
                   color:Color(0xFF212121))),
               SizedBox(height:40),
               OptionCardWithCircle(title: "School",
-                  circleColor:Color(0xFF246BFD),
-                  sideContainerColor:Color(0XFF5089FD),
+                  circleColor:AppColors.lightBlue,
+                  sideContainerColor: AppColors.DarkBlue,
                   imagePath:"assets/images/school.png"
               ),
 
               OptionCardWithCircle(title: "Higher Education",
-                  circleColor:Color(0xFFFB9400),
-                  sideContainerColor:Color(0XFFFFAB38),
+                  circleColor:AppColors.lightYellow,
+                  sideContainerColor: AppColors.DarkYellow,
                   imagePath:"assets/images/tickSquare.png"
               ),
 
               OptionCardWithCircle(title: "Teams",
-                  circleColor:Color(0xFF12D18E),
-                  sideContainerColor:Color(0XFF71E3BB),
+                  circleColor:AppColors.lightGreen,
+                  sideContainerColor: AppColors.DarkGreen,
                   imagePath:"assets/images/teams.png"
               ),
               OptionCardWithCircle(title: "Business",
-                  circleColor:Color(0xFFFF5A5F),
-                  sideContainerColor:Color(0XFFFF8A9B),
+                  circleColor:AppColors.lightRed,
+                  sideContainerColor:AppColors.DarkRed,
                   imagePath:"assets/images/business.png"
               ),
 

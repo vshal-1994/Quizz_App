@@ -1,4 +1,4 @@
-import 'models/walkthrough_models.dart';
+import '../models/walkthrough_models.dart';
 
 final List<WalkthroughModel> walkthroughPages = [
   WalkthroughModel(

@@ -4,7 +4,8 @@ import 'package:quiz_app/constants/app_strings.dart';
 import '../buttons/button_primary_rounded.dart';
 import '../constants/app_colors.dart';
 import '../custom_widgets/indicator_func.dart';
-import '../data.dart';
+import '../data/boarding_data.dart';
+import 'create_account_2.dart';
 class WalkThrough3 extends StatefulWidget {
   const WalkThrough3({super.key});
 
@@ -81,7 +82,12 @@ class _WalkThrough3State extends State<WalkThrough3> {
                         backgroundColor:AppColors.primary,
                         fontSize: 16,
                         fontWeight:FontWeight.bold,
-                        onPressed: (){},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const CreateAccountTwo()),
+                          );
+                        },
                         textColor:AppColors.white,
                         shadowColor: AppColors.primary,
 
