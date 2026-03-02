@@ -10,7 +10,7 @@ class CreateAccountTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.only(top: 80, left: 24.0, right: 24.0),
         child: Column(
@@ -45,7 +45,7 @@ class CreateAccountTwo extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF212121),
+                          color: AppColors.black,
                         ),
                       ),
                       WidgetSpan(
@@ -69,7 +69,7 @@ class CreateAccountTwo extends StatelessWidget {
               ),
               SizedBox(height:16),
               Text("You can skip it if you're not sure",style:TextStyle(fontSize:18,height:1.2,
-                  color:Color(0xFF212121))),
+                  color:AppColors.black)),
               SizedBox(height:40),
               OptionCardWithCircle(title: "School",
                   circleColor:AppColors.lightBlue,

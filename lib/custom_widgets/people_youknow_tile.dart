@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_colors.dart';
+
 class PeopleMayKnowTile extends StatelessWidget {
   final String name;
   final String imagePath;
@@ -32,7 +34,7 @@ class PeopleMayKnowTile extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF212121),
+                color: AppColors.black,
               ),
             ),
           ),
@@ -44,7 +46,7 @@ class PeopleMayKnowTile extends StatelessWidget {
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF6949FF),
-                foregroundColor: Colors.white,
+                foregroundColor: AppColors.white,
                 elevation: 0,
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
