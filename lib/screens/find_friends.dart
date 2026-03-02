@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/app_strings.dart';
-import 'package:quiz_app/screens/waiting_for_players.dart';
 
-import '../constants/app_colors.dart';
 import '../custom_widgets/custom_searchbar.dart';
 import '../custom_widgets/find_friends_container.dart';
 import '../custom_widgets/people_youknow_tile.dart';
 import '../data/dummy_data.dart';
+import 'home_full_page.dart';
 import 'quiz_details_full.dart';
 
 void navigateToQuizDetailPage(BuildContext context) {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const WaitingForPlayers ()),
+    MaterialPageRoute(builder: (context) => const HomeFullPage()),
   );
 }
 
@@ -22,7 +21,7 @@ class FindFriendsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.white,
+        backgroundColor: Colors.white,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -66,7 +65,7 @@ class FindFriendsScreen extends StatelessWidget {
                   
                   Container(
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
@@ -101,7 +100,7 @@ class FindFriendsScreen extends StatelessWidget {
                   ),
                 SizedBox(height:24),
                   Row(children:[
-                    Text(AppStrings.peopleyoumayknow,style:TextStyle(fontSize:24,fontWeight:FontWeight.bold,color:AppColors.black),
+                    Text(AppStrings.peopleyoumayknow,style:TextStyle(fontSize:24,fontWeight:FontWeight.bold,color:Color(0xFF212121)),
                     ),SizedBox(width:20),
                     Text(AppStrings.viewall,style:TextStyle(fontSize:18,fontWeight:FontWeight.bold,color:Color(0xFF6949FF)),
                     ),
