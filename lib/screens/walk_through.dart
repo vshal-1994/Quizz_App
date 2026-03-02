@@ -27,7 +27,7 @@ class _WalkThrough3State extends State<WalkThrough3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         body: SafeArea(
             child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -62,7 +62,7 @@ class _WalkThrough3State extends State<WalkThrough3> {
                                   style: GoogleFonts.nunito(
                                     fontSize: MediaQuery.of(context).size.width * 0.08,
                                     fontWeight: FontWeight.w800,
-                                    color: const Color(0xFF212121),
+                                    color: AppColors.black,
                                     height: 1.5,
                                   ),
                                 ),

@@ -29,17 +29,19 @@ class QuizDetailsSection extends StatelessWidget {
       body:SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 24, left: 24.0, right: 24.0,bottom: 24),
-          child: 
-             Column(crossAxisAlignment: CrossAxisAlignment.start,
-              children:[ClipRRect(
-                borderRadius: BorderRadiusGeometry.circular(16),
+          child:
+          Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
                 child:AspectRatio(aspectRatio: 382/230,
                 child:Image.asset("assets/images/imagebacktoschool.png",
                 fit:BoxFit.cover,
                 width:double.infinity)
                 )
               ),
-                SizedBox(height:20),
+
                 Text(AppStrings.backtoschoolquixgame,style:TextStyle(fontSize:24,
                   fontWeight:FontWeight.bold,height:1.6,)),
                 SizedBox(height:20),
@@ -87,7 +89,7 @@ class QuizDetailsSection extends StatelessWidget {
                         fontSize:16,
                         fontWeight:FontWeight.bold,
                         shadowColor: Colors.black,
-                        textColor: Colors.white,
+                        textColor: AppColors.white,
                         onPressed: (){},
                         height:58
                     ),

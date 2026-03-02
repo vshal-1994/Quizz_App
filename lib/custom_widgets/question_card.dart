@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_colors.dart';
+
 class QuizCard extends StatelessWidget {
   final String image;
   final String title;
@@ -16,7 +18,7 @@ class QuizCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: const Color(0xFFEAEAEA)),
       ),

@@ -22,4 +22,9 @@ class AppStrings {
   static const String playsolo="Play Solo";
   static const String playwithfriends="Play with Friends";
   static const String longtext="This is back to school quizzo.Let's make this game in your class to revive the classroom atmosphere after the holidays.Let's have fun at school";
+  static const String yourachievement="Your Achievements";
+  static const String myStatistics="My Statistics";
+  static const String waitingForPlayers="Waiting For Players...";
+  static const String  yourPointthisWeek= "Your Point this Week";
+  static const String point="875 Pt";
 }
