@@ -5,12 +5,13 @@ import '../custom_widgets/custom_searchbar.dart';
 import '../custom_widgets/find_friends_container.dart';
 import '../custom_widgets/people_youknow_tile.dart';
 import '../data/dummy_data.dart';
+import 'home_full_page.dart';
 import 'quiz_details_full.dart';
 
 void navigateToQuizDetailPage(BuildContext context) {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const QuizDetailsSection()),
+    MaterialPageRoute(builder: (context) => const HomeFullPage()),
   );
 }
 
