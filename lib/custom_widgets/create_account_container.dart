@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_colors.dart';
+
 class OptionCardWithCircle extends StatelessWidget {
   final String title;
   final String imagePath;
@@ -21,7 +23,7 @@ class OptionCardWithCircle extends StatelessWidget {
       height: 90,
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: const Color(0xFFF5F5F5), width: 2),
       ),
@@ -68,7 +70,7 @@ class OptionCardWithCircle extends StatelessWidget {
                 fontSize: 24,
                 height:1.6,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF212121),
+                color: AppColors.black,
 
               ),
             ),
