@@ -34,6 +34,7 @@ class QuizApp extends StatelessWidget {
         '/find-friends': (context) => const FindFriendsScreen(),
         '/waiting-players':(context)=> const WaitingForPlayers(),
         '/my-profile-statistics':(context)=>const MyProfileStatistics(),
+        '/quizdetails-full':(context)=>const QuizDetailsSection(),
 
       },
     );

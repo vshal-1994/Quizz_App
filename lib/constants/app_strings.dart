@@ -27,4 +27,11 @@ class AppStrings {
   static const String waitingForPlayers="Waiting For Players...";
   static const String  yourPointthisWeek= "Your Point this Week";
   static const String point="875 Pt";
+  static const String Quizzo = "Quizzo";
+  static const String Playquiztogetherwithyourfriendsnow = "Play quiz together with\nyour friends now!";
+  static const String discover = "Discover";
+  static const String topauthor = "Top Authors";
+  static const String topacollection = "Top Collections";
+  static const String trendingquiz = "Trending Quiz";
+  static const String toppicks = "Top Picks";
 }

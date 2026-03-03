@@ -31,7 +31,7 @@ class ReusableQuizSection extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.darkBlack,
+                    color: AppColors.black,
                   ),
                 ),
               ),
@@ -168,7 +168,7 @@ class ReusableQuizSection extends StatelessWidget {
                                 style: const TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w600,
-                                  color: AppColors.darkBlack,
+                                  color: AppColors.black,
                                 ),
                               ),
                             ],

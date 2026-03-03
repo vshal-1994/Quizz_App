@@ -102,7 +102,9 @@ class FindFriendsScreen extends StatelessWidget {
                   Row(children:[
                     Text(AppStrings.peopleyoumayknow,style:TextStyle(fontSize:24,fontWeight:FontWeight.bold,color:Color(0xFF212121)),
                     ),SizedBox(width:20),
-                    Text(AppStrings.viewall,style:TextStyle(fontSize:18,fontWeight:FontWeight.bold,color:Color(0xFF6949FF)),
+                    InkWell(onTap:(){Navigator.pushNamed(context, '/waiting-players');},
+                      child: Text(AppStrings.viewall,style:TextStyle(fontSize:18,fontWeight:FontWeight.bold,color:Color(0xFF6949FF)),
+                      ),
                     ),
                     SizedBox(width:12),
                     Icon(Icons.arrow_forward,size:18,color:Color(0xFF6949FF))

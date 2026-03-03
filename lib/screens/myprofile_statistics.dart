@@ -22,9 +22,10 @@ class MyProfileStatistics extends StatelessWidget{
           (color:AppColors.black,fontSize:24,fontWeight: FontWeight.bold,height:1.6)),
         actions: [Padding(
           padding: const EdgeInsets.only(right:24.0),
-          child: Icon(MdiIcons.dotsHorizontalCircleOutline,size:24),
-        )],
-    ),
+          child: IconButton(icon:Icon(MdiIcons.dotsHorizontalCircleOutline,size:24),
+            onPressed:(){Navigator.pushNamed(context, '/quizdetails-full');},
+        ),
+        )],),
       body:Container(decoration: BoxDecoration(color:AppColors.white),
         child: Padding(
           padding: const EdgeInsets.only(top:16,left:24,right:24),
